@@ -3,14 +3,13 @@ import { useState } from 'react';
 import { ethers } from 'ethers'
 import Greeter from './artifacts/contracts/Greeter.sol/Greeter.json'
 
-// Update with the contract address logged out to the CLI when it was deployed 
-const greeterAddress = "Kontrat adresini buraya yapıştırınız."
+// Deploy ettiğimiz kontrat adresimizi tanımlıyoruz;
+const greeterAddress = "0x5fbdb2315678afecb367f032d93f642f64180aa3"
 
 function App() {
-  // store greeting in local state
   const [greeting, setGreetingValue] = useState()
 
-  // request access to the user's MetaMask account
+  // Metamask erişiminin yapıldığı kısım;
   async function requestAccount() {
     await window.ethereum.request({ method: 'eth_requestAccounts' });
   }
